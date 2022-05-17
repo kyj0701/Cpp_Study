@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip>
-#include <vector>
 #include <cstring>
 #include <ctime>
 
@@ -58,7 +57,6 @@ int main(void) {
     // print_date(now_year, now_month, now_day);
 
     int days = 0;
-    int wday = now_t -> tm_wday + 1;
 
     days += now_day;
     if (now_month == 1) {
@@ -102,6 +100,7 @@ int main(void) {
     else if (now_month == 4 || now_month == 6 || now_month == 9 || now_month == 11) days += (30-birth_day+1);
     else days += (31-birth_day+1);
 
+    int wday = now_t -> tm_wday + 1;
     days -= wday;
 
     int res = 6 - days % 7;
